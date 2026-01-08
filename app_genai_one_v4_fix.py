@@ -1166,7 +1166,21 @@ def main():
                                 st.rerun()
 
                 st.divider()
-
+                # ===========================================
+                # [추가됨] 여기에 다운로드 버튼을 배치합니다.
+                # ===========================================
+                if os.path.exists(audio_full_path):
+                    with open(audio_full_path, "rb") as f:
+                        file_bytes = f.read()
+                        st.download_button(
+                            label="💾 완성된 오디오 내 컴퓨터로 저장하기 (WAV)",
+                            data=file_bytes,
+                            file_name=target_audio,
+                            mime="audio/wav",
+                            use_container_width=True,
+                            type="primary"  # 버튼 강조
+                        )
+                # ===========================================
                 # [화면 분할] 좌: 리스트(선택) / 우: 에디터
                 col_list, col_edit = st.columns([1.2, 1])
                 
