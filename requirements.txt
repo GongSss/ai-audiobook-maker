@@ -2,5 +2,4 @@ streamlit
 google-genai
 beautifulsoup4
 ebooklib
-pyaudioop
 pydub
